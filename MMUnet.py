@@ -96,7 +96,7 @@ def train_model(model, train_loader, optimizer, num_epochs):
     model.train()
     for epoch in range(num_epochs):
         for thermal_images, visible_images, labels in train_loader:
-            thermal_images = add_gaussian_noise(thermal_images, std=1)
+            visible_images = add_gaussian_noise(visible_images, std=1)
             thermal_images = thermal_images.to(device)
             visible_images = visible_images.to(device)
             labels = labels.to(device)
